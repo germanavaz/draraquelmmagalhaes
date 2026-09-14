@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Raquel Magalhães - Advogada Empresarial</title>
+<meta name="description" content="Advogada Dra. Raquel Magalhães especialista em Direito Empresarial oferece orientação jurídica personalizada para empresas.">
+
+<!-- Fontes: Poppins (títulos) + Inter (textos) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Favicon: troque pelo arquivo real dentro de assets/img -->
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ==================== TOPBAR ==================== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <a class="topbar__email" href="mailto:raquelmagalhaes@yahoo.com.br">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 6.5 8 6.5 8-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      raquelmagalhaes@yahoo.com.br
+    </a>
+    <a class="topbar__social" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero" id="topo">
+  <!-- Imagem de fundo: substitua o arquivo em assets/img/hero-bg.jpg -->
+  <img class="hero__bg" src="assets/img/hero-bg.jpg" alt="" aria-hidden="true">
+  <div class="hero__overlay"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <div class="hero__brand">
+        <!-- Logo: substitua pelo arquivo em assets/img/logo.png -->
+        <img class="hero__logo" src="assets/img/logo.png" alt="Raquel Magalhães - Advogada Empresarial">
+      </div>
+
+      <h1 class="hero__title">Protejo seu negócio e ajudo a impulsionar seu crescimento com uma assessoria jurídica estratégica e segura</h1>
+
+      <a href="mailto:raquelmagalhaes@yahoo.com.br" class="btn btn--green">Entre em contato</a>
+    </div>
+
+    <form class="hero__form" id="contact-form" novalidate>
+      <label class="field">
+        <span>Nome</span>
+        <input type="text" name="nome" id="nome" placeholder="Nome" required>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" id="email" placeholder="E-mail" required>
+        </label>
+        <label class="field">
+          <span>WhatsApp</span>
+          <input type="tel" name="whatsapp" id="whatsapp" placeholder="WhatsApp" required>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Mensagem</span>
+        <textarea name="mensagem" id="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+      </label>
+
+      <!-- O envio (backend) será integrado depois em outro serviço -->
+      <button type="submit" class="btn btn--navy btn--block">Enviar</button>
+      <p class="field-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</header>
+
+<!-- ==================== ÁREAS DE ATUAÇÃO ==================== -->
+<section class="areas container" id="areas">
+  <div class="areas__intro">
+    <h2 class="section-title">Áreas de atuação</h2>
+    <p>Compreendo que o universo do Direito Empresarial é vasto e dinâmico, repleto de desafios únicos. Estou pronta para oferecer orientação jurídica especializada em diversas áreas, visando proteger e fortalecer os interesses de sua empresa.</p>
+
+    <!-- Ícone da balança: substitua pelo arquivo em assets/img/icone-balanca.png (pode manter o SVG abaixo se preferir não usar imagem) -->
+    <img class="areas__icon" src="assets/img/icone-balanca.png" alt="" aria-hidden="true">
+  </div>
+
+  <div class="areas__grid">
+    <article class="area-card">
+      <h3>Direito Empresarial</h3>
+      <p>Nossa consultoria jurídica possui o objetivo de orientar as empresas a minimizar os riscos propondo soluções e procedimentos para melhorar a gestão de sua empresa, tanto no consultivo quanto no contencioso, no sentido de auxiliar as dinâmicas existentes no mundo empresarial.</p>
+    </article>
+    <article class="area-card">
+      <h3>Direito Contratual</h3>
+      <p>Fornecemos a melhor assessoria para seus negócios, analisado e gerindo os riscos existentes nas relações contratuais.</p>
+    </article>
+    <article class="area-card">
+      <h3>Direito Civil</h3>
+      <p>Oferecemos nossa experiência para auxiliar as empresas no ramo do direito mais amplo, assessorando os negócios jurídicos no intuito de diminuir os riscos.</p>
+    </article>
+    <article class="area-card">
+      <h3>Direito do Trabalho</h3>
+      <p>Auxiliamos as empresas a melhorarem suas relações de trabalho através de um conjunto de princípios e normas jurídicas, de forma a amenizar os litígios existentes.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ==================== CONSULTORIA / CARROSSEL DE SERVIÇOS ==================== -->
+<section class="servicos" id="servicos">
+  <div class="container servicos__inner">
+    <div class="servicos__text">
+      <h2 class="section-title section-title--light">Consultoria Jurídica Empresarial</h2>
+      <p>Nossa equipe experiente oferece consultoria jurídica estratégica para ajudar a guiar sua empresa por caminhos legais sólidos. Desde a formação de sociedades e contratos até questões contratuais e de conformidade, estamos aqui para garantir que você tome decisões informadas que impulsionem o crescimento sustentável do seu negócio.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 6 cards prontos para você preencher com título/imagem/texto -->
+      <article class="service-card">
+        <div class="service-card__media"><img src="assets/img/servico-1.jpg" alt="Serviço 1"></div>
+        <div class="service-card__label"><span>Título do serviço 1</span><small>Serviços</small></div>
+      </article>
+      <article class="service-card">
+        <div class="service-card__media"><img src="assets/img/servico-2.jpg" alt="Serviço 2"></div>
+        <div class="service-card__label"><span>Título do serviço 2</span><small>Serviços</small></div>
+      </article>
+      <article class="service-card">
+        <div class="service-card__media"><img src="assets/img/servico-3.jpg" alt="Serviço 3"></div>
+        <div class="service-card__label"><span>Título do serviço 3</span><small>Serviços</small></div>
+      </article>
+      <article class="service-card">
+        <div class="service-card__media"><img src="assets/img/servico-4.jpg" alt="Serviço 4"></div>
+        <div class="service-card__label"><span>Título do serviço 4</span><small>Serviços</small></div>
+      </article>
+      <article class="service-card">
+        <div class="service-card__media"><img src="assets/img/servico-5.jpg" alt="Serviço 5"></div>
+        <div class="service-card__label"><span>Título do serviço 5</span><small>Serviços</small></div>
+      </article>
+      <article class="service-card">
+        <div class="service-card__media"><img src="assets/img/servico-6.jpg" alt="Serviço 6"></div>
+        <div class="service-card__label"><span>Título do serviço 6</span><small>Serviços</small></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DEPOIMENTOS ==================== -->
+<section class="depoimentos" id="depoimentos">
+  <div class="container">
+    <h2 class="section-title">Depoimentos</h2>
+  </div>
+
+  <div class="marquee" id="depoimentos-marquee">
+    <div class="marquee__track" id="depoimentos-track">
+
+      <article class="testimonial-card">
+        <h3>Jorge Zamorano</h3>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>Maravilhosa! Tive problemas com o plano de saúde do meu filho, a empresa simplesmente decidiu cancelar o plano dele no meio do tratamento. A Raquel me deu um suporte incrível, sempre super atenciosa, me esclarecendo tudo! E o melhor, ela conseguiu resolver meu problema e o plano já está ativo novamente! Super indico!!!</p>
+      </article>
+
+      <article class="testimonial-card">
+        <h3>Cecilia Macieira</h3>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>Excelente atendimento e resultados!</p>
+      </article>
+
+      <article class="testimonial-card">
+        <h3>Fatima Menezes</h3>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>Tive experiências muito boas com essa profissional, alguns anos atrás sofri um golpe na internet que me causou um prejuízo muito grande junto a uma instituição financeira, recorri aos seus serviços e ela foi excelente, ganhei a causa, e tive um acompanhamento maravilhoso. Parabéns!</p>
+      </article>
+
+      <!-- Card extra pronto para o próximo depoimento -->
+      <article class="testimonial-card testimonial-card--placeholder">
+        <h3>Novo depoimento</h3>
+        <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>Espaço reservado para o próximo depoimento de cliente.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SOBRE MIM ==================== -->
+<section class="sobre container" id="sobre">
+  <div class="sobre__text">
+    <h2 class="section-title">Sobre mim</h2>
+    <h3 class="sobre__subtitle">Dra. Raquel Magalhães - Advogada Direito Empresarial</h3>
+    <p>Bacharel em Direito, Advogada especializada em Direito Empresarial, Pós-Graduada em Direito Empresarial, Direito Civil e Novo Processo Civil, possui mais de 14 anos de prática no mercado.</p>
+    <p>Especializada em Gestão Empresarial, auxiliou grandes empresas diante do momento atual no país. Criadora da Magalhães Consultoria e Gestão, montou uma estrutura para auxiliar tanto pessoas jurídicas como pessoas físicas. Esta estrutura conta com uma equipe de profissionais dedicados à exponencialização do potencial de cada cliente.</p>
+    <a href="mailto:raquelmagalhaes@yahoo.com.br" class="btn btn--green">Entre em contato</a>
+  </div>
+
+  <div class="sobre__photo">
+    <div class="sobre__ring"></div>
+    <!-- Foto: substitua pelo arquivo em assets/img/sobre-mim.jpg -->
+    <img src="assets/img/sobre-mim.jpg" alt="Dra. Raquel Magalhães, advogada especialista em Direito Empresarial">
+  </div>
+</section>
+
+<!-- ==================== REDES SOCIAIS ==================== -->
+<section class="social" id="social">
+  <div class="container">
+    <h2 class="section-title">Me siga nas redes sociais</h2>
+
+    <div class="social__profile">
+      <!-- Foto de perfil: substitua pelo arquivo em assets/img/perfil-instagram.jpg -->
+      <img src="assets/img/perfil-instagram.jpg" alt="" class="social__avatar">
+      <a href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">dra.raquelmmagalhaes</a>
+    </div>
+
+    <!-- Grade de posts: hoje estática. Depois dá para ligar na API do Instagram para atualizar sozinha -->
+    <div class="social__grid">
+      <a class="social__post" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-1.jpg" alt="Post do Instagram 1">
+      </a>
+      <a class="social__post social__post--reel" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-2.jpg" alt="Post do Instagram 2">
+        <span class="social__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7Z"/></svg>
+        </span>
+      </a>
+      <a class="social__post" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-3.jpg" alt="Post do Instagram 3">
+      </a>
+      <a class="social__post" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-4.jpg" alt="Post do Instagram 4">
+      </a>
+      <a class="social__post" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-5.jpg" alt="Post do Instagram 5">
+      </a>
+      <a class="social__post social__post--reel" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-6.jpg" alt="Post do Instagram 6">
+        <span class="social__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7Z"/></svg>
+        </span>
+      </a>
+      <a class="social__post" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-7.jpg" alt="Post do Instagram 7">
+      </a>
+      <a class="social__post" href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener">
+        <img src="assets/img/instagram-8.jpg" alt="Post do Instagram 8">
+      </a>
+    </div>
+
+    <a href="https://www.instagram.com/dra.raquelmmagalhaes/" target="_blank" rel="noopener" class="btn btn--navy">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+      Siga no Instagram
+    </a>
+  </div>
+</section>
+
+<!-- ==================== RODAPÉ / CTA FINAL ==================== -->
+<footer class="footer">
+  <div class="container">
+    <h2 class="footer__title">Precisa de ajuda?</h2>
+    <p>Marque uma reunião comigo.</p>
+    <a href="mailto:raquelmagalhaes@yahoo.com.br" class="btn btn--green">Entre em contato</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
