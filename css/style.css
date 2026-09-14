@@ -294,7 +294,8 @@ p {
   color: var(--white);
 }
 .servicos__inner {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
 }
 .servicos__text p {
@@ -336,6 +337,10 @@ p {
   flex-direction: column;
   gap: 8px;
   flex: 1;
+}
+
+.service-card__label p {
+  color: var(--text-body);
 }
 .service-card__label span {
   font-family: var(--font-heading);
