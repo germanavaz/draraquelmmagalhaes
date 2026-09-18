@@ -108,6 +108,27 @@
         </div>
 
         <form class="hero__form" id="contact-form" novalidate>
+          <!-- Web3Forms: pegue sua chave em https://web3forms.com e cole aqui -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="df9b62f3-83b7-43a0-a875-40a33d5b5895"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="Novo contato pelo site - Raquel Magalhães Advocacia"
+          />
+          <input type="hidden" name="from_name" value="Site Raquel Magalhães" />
+          <!-- Campo anti-spam (honeypot): fica invisível para pessoas, só bots preenchem -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hero__honeypot"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
           <label class="field">
             <span>Nome</span>
             <input
@@ -153,7 +174,7 @@
             ></textarea>
           </label>
 
-          <!-- O envio (backend) será integrado depois em outro serviço -->
+          <!-- Envio real via Web3Forms, feito em js/script.js -->
           <button type="submit" class="btn btn--navy btn--block">Enviar</button>
           <p
             class="field-feedback"

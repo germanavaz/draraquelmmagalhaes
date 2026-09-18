@@ -6,27 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------------------------------------------
-     1) Carrossel de serviços (setas próximo/anterior)
-  --------------------------------------------------- */
-  const track = document.getElementById('servicos-track');
-  const prevBtn = document.getElementById('servicos-prev');
-  const nextBtn = document.getElementById('servicos-next');
-
-  if (track && prevBtn && nextBtn) {
-    const scrollByCard = (direction) => {
-      const card = track.querySelector('.service-card');
-      if (!card) return;
-      const gap = parseFloat(getComputedStyle(track).columnGap || 20);
-      const amount = card.getBoundingClientRect().width + gap;
-      track.scrollBy({ left: direction * amount, behavior: 'smooth' });
-    };
-
-    prevBtn.addEventListener('click', () => scrollByCard(-1));
-    nextBtn.addEventListener('click', () => scrollByCard(1));
-  }
-
-  /* ---------------------------------------------------
-     2) Carrossel contínuo de depoimentos (efeito "esteira")
+     1) Carrossel contínuo de depoimentos (efeito "esteira")
      Duplicamos os cards uma vez para o loop ficar contínuo,
      sem precisar de mais depoimentos reais.
   --------------------------------------------------- */
@@ -42,17 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------------------------------
-     3) Formulário de contato (hero)
-     O envio para um backend/CRM será ligado depois em
-     outro serviço. Por enquanto só validamos e mostramos
-     uma mensagem de confirmação.
+     2) Formulário de contato (hero)
+     Envio real via Web3Forms (https://web3forms.com) — sem
+     precisar de servidor próprio. Pegue sua "access key"
+     gratuita no site deles e cole no input hidden
+     name="access_key" lá no index.html.
   --------------------------------------------------- */
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
+  const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
   if (form) {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      // Honeypot: se esse campo escondido veio preenchido, é bot — ignora silenciosamente
+      if (form.botcheck && form.botcheck.checked) {
+        form.reset();
+        return;
+      }
 
       if (!form.checkValidity()) {
         feedback.textContent = 'Preencha todos os campos antes de enviar.';
@@ -60,26 +48,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const dados = {
-        nome: form.nome.value.trim(),
-        email: form.email.value.trim(),
-        whatsapp: form.whatsapp.value.trim(),
-        mensagem: form.mensagem.value.trim(),
-      };
+      const accessKey = form.access_key.value.trim();
+      if (!accessKey || accessKey === 'COLE_SUA_ACCESS_KEY_AQUI') {
+        feedback.textContent = 'Formulário ainda não configurado: falta colar a access key do Web3Forms no index.html.';
+        feedback.style.color = '#d64545';
+        return;
+      }
 
-      // TODO: integrar com o backend/CRM escolhido.
-      // Exemplo futuro:
-      // fetch('URL_DO_SEU_BACKEND', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(dados),
-      // });
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const textoOriginal = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      feedback.textContent = '';
 
-      console.log('Dados do formulário prontos para envio:', dados);
+      try {
+        const resposta = await fetch(WEB3FORMS_ENDPOINT, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const resultado = await resposta.json();
 
-      feedback.textContent = 'Mensagem pronta para envio! (conecte o backend para concluir o envio real)';
-      feedback.style.color = '#29c988';
-      form.reset();
+        if (resultado.success) {
+          feedback.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
+          feedback.style.color = '#29c988';
+          form.reset();
+        } else {
+          feedback.textContent = 'Não foi possível enviar agora. Tente novamente em instantes.';
+          feedback.style.color = '#d64545';
+        }
+      } catch (erro) {
+        feedback.textContent = 'Falha de conexão. Verifique sua internet e tente novamente.';
+        feedback.style.color = '#d64545';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = textoOriginal;
+      }
     });
   }
 
