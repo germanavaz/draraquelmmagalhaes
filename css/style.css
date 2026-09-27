@@ -427,7 +427,7 @@ p {
   display: block;
   border-radius: 10px;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   background: var(--navy-deep);
 }
 .social__post img {
