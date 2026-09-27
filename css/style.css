@@ -258,6 +258,18 @@ p {
 }
 
 /* ---------- Áreas de atuação ---------- */
+
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .areas {
   padding: 72px 24px;
   display: grid;
@@ -281,6 +293,9 @@ p {
   border-radius: var(--radius);
   padding: 26px;
   box-shadow: 0 12px 30px rgba(28, 37, 100, 0.06);
+  animation: scrollFadeIn linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
 }
 .area-card h3 {
   font-size: 1.05rem;
@@ -365,6 +380,13 @@ p {
   gap: 48px;
   align-items: center;
 }
+
+.sobre__text {
+  animation: scrollFadeIn linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+}
+
 .sobre__subtitle {
   font-size: 1rem;
   font-weight: 600;
@@ -374,6 +396,9 @@ p {
   position: relative;
   justify-self: center;
   width: min(360px, 100%);
+  animation: scrollFadeIn linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
 }
 .sobre__photo img {
   border-radius: 50%;
